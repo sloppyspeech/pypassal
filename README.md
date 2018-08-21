@@ -15,9 +15,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Really Really Inspired from https://github.com/digininja/pipal 
 
 ### Lets Do IT
-*** Only Works on Python >= 3.6
+*** Tested only on python3.6
+
 Make sure python points to alteast python3.6
+
 Create Virtual Env and install the required packages/modules
+
+
 ```
 git clone https://github.com/sloppyspeech/pypassal.git
 cd pypassal
