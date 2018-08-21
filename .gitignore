@@ -1,0 +1,6 @@
+**/__pycache__
+data
+.vscode
+ev_pypassal
+*.csv
+*.bkup
