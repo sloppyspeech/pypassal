@@ -20,8 +20,8 @@ git clone https://github.com/sloppyspeech/pypassal.git
 ### Prerequisites
 *** Works only on Python >= 3.6
 ```
-python -m venv <virtual_env>
-source ./<virtual_env>/bin/activate
+python -m venv ev_pypassal
+source ./ev_pypassal/bin/activate
 pip install requirements.txt
 mkdir data
 cd data
