@@ -14,13 +14,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Inspiration https://github.com/digininja/pipal 
 * Really Really Inspired from https://github.com/digininja/pipal 
 
-### Getting Started 
-git clone https://github.com/sloppyspeech/pypassal.git
-
-### Prerequisites
+### Lets Do IT
 *** Works only on Python >= 3.6
 Create Virtual Env and install the required packages/modules
 ```
+git clone https://github.com/sloppyspeech/pypassal.git
+cd pypassal
 python -m venv ev_pypassal
 source ./ev_pypassal/bin/activate
 pip install requirements.txt
