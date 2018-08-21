@@ -26,7 +26,7 @@ pip install requirements.txt
 mkdir data
 cd data
 wget http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
-unzip rockyou.txt.bz2
+bzip2 -dk rockyou.txt.bz2
 python pypassal.py ./data/rockyou.txt
 ```
 ### Sample Run
