@@ -36,12 +36,13 @@ mkdir data
 cd data
 wget http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
 bzip2 -dk rockyou.txt.bz2
+head -3000000 rockyou.txt > rockyou_3m.txt
 ```
 ### Sample Run
 
 ```
 (ev_pypassal) ╭─ashutosh [ ~/pypassal ] ‹master› 
-╰─▶ time python3.6 pypassal.py ./data/rockyou.txt
+╰─▶ python pypassal.py ./data/rockyou_3m.txt
 /usr/lib64/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   return f(*args, **kwds)
 ************************************************************
