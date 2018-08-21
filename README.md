@@ -2,7 +2,8 @@
 Password Analyser in Python,is a python implementation for https://github.com/digininja/pipal . 
 ## Authors
 
-* **SloppySpeech** (https://github.com/sloppyspeech)
+## Author 
+SloppySpeech (https://github.com/sloppyspeech)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
@@ -26,15 +27,13 @@ mkdir data
 cd data
 wget http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
 unzip rockyou.txt.bz2
-
-```
 python pypassal.py ./data/rockyou.txt
 ```
 ### Sample Run
 
 ```
 (ev_pypassal) ╭─ashutosh [ ~/pypassal ] ‹master› 
-╰─▶ time python3.6 pypassal.py ./data/passwds.txt
+╰─▶ time python3.6 pypassal.py ./data/rockyou.txt
 /usr/lib64/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   return f(*args, **kwds)
 ************************************************************
