@@ -18,6 +18,7 @@ python pypassal.py ./data/<password_file_name>
 ```
 ### Sample Run
 
+```
 (ev_pypassal) ╭─ashutosh [ ~/Learn/LearnPy/pypassal ] ‹master› 
 ╰─▶ time python3.6 pypassal.py ./data/passwds.txt        
 /usr/lib64/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
@@ -256,4 +257,4 @@ Four Digits at the end      =       45 (11.42%)
  (     =        1 (00.25%)
 --------------------Character Composition End--------------------
 
-
+```
