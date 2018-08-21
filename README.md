@@ -37,6 +37,7 @@ cd data
 wget http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
 bzip2 -dk rockyou.txt.bz2
 head -3000000 rockyou.txt > rockyou_3M.txt
+cd ..
 ```
 ### Sample Run
 
