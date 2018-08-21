@@ -19,10 +19,14 @@ git clone https://github.com/sloppyspeech/pypassal.git
 
 ### Prerequisites
 *** Works only on Python >= 3.6
+Create Virtual Env and install the required packages/modules
 ```
 python -m venv ev_pypassal
 source ./ev_pypassal/bin/activate
 pip install requirements.txt
+```
+Create a data directory,download and extract the test file
+```
 mkdir data
 cd data
 wget http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
