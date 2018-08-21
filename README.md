@@ -1,5 +1,17 @@
 # pypassal
 Password Analyser in Python,is a python implementation for https://github.com/digininja/pipal . 
+## Authors
+
+* **SloppySpeech** (https://github.com/sloppyspeech)
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to https://github.com/digininja/pipal
+* Inspiration https://github.com/digininja/pipal 
+* Really Really Inspired from https://github.com/digininja/pipal 
 
 ### Getting Started 
 git clone https://github.com/sloppyspeech/pypassal.git
@@ -11,10 +23,12 @@ python -m venv <virtual_env>
 source ./<virtual_env>/bin/activate
 pip install requirements.txt
 mkdir data
+cd data
+wget http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
+unzip rockyou.txt.bz2
+
 ```
-copy the data file with passwords to be analysed to "data"
-```
-python pypassal.py ./data/<password_file_name>
+python pypassal.py ./data/rockyou.txt
 ```
 ### Sample Run
 
