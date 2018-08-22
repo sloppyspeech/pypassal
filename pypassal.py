@@ -42,6 +42,8 @@ def show_report(my_df, passwd_count, char_count):
     #
     mnth_long_df = my_df[my_df['mnth_long'] != ''].groupby('mnth_long')['passwd'].count(
     ).to_frame().reset_index().sort_values(by='passwd', ascending=False)
+    #
+    # Form basewords
     data_df=my_df['passwd'].to_frame().reset_index()
     data_df['passwd1']= my_df['passwd'].str.replace(r'[^a-zA-Z]*$','').to_frame()
     data_df['passwd2']= data_df['passwd1'].str.replace(r'^[^a-zA-Z]*','').to_frame()
@@ -112,8 +114,12 @@ def show_report(my_df, passwd_count, char_count):
                                           smry.get_last_4_digits()[0], smry.get_last_4_digits()[1]))
     print(prn.PrintReport.report_footer("Over All"))
     #
-    prn.PrintReport.show_indv_report_dict("Character Composition", colls.OrderedDict(sorted(
-        ec.CharCheck.char_counter.items(), key=lambda x: x[1], reverse=True)), passwd_count, 5)
+    my_new_df=pd.Series(ec.CharCheck.char_counter).to_frame()
+    my_new_df['char']=my_new_df.index
+    my_new_df.columns=['count','characters']
+    my_new_df=my_new_df.sort_values(by='count',ascending=False)
+    prn.PrintReport.show_indv_report_df(
+        "Top 100 Characters in Password", my_new_df[0:100], "characters", "count", char_count, 10)
     #
 
 
