@@ -1,0 +1,5 @@
+Issues
+===============================================================
+~ Non UTF-8 characters cause problems
+~ Total count of password is off by one at times
+~ Accurately estimate the lines in password file
