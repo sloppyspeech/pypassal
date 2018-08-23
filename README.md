@@ -1,6 +1,5 @@
 # pypassal
 Password Analyser in Python,is a python implementation for https://github.com/digininja/pipal . 
-## Authors
 
 ## Author 
 SloppySpeech (https://github.com/sloppyspeech)
