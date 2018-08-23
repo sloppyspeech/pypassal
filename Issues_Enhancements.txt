@@ -1,5 +1,8 @@
 Issues
 ===============================================================
+~ Optimize Function calls e.g. compiling regex in methods
 ~ Non UTF-8 characters cause problems
-~ Total count of password is off by one at times
-~ Accurately estimate the lines in password file
+~ Count of Total number of passwords is off by one at times
+~ Accurately estimate the number of passwords in the file
+~ Standardize the print report class
+~  
