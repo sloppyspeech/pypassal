@@ -5,4 +5,5 @@ Issues
 ~ Count of Total number of passwords is off by one at times
 ~ Accurately estimate the number of passwords in the file
 ~ Standardize the print report class
+~ Modify few instance methods to @property
 ~  
