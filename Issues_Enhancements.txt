@@ -1,10 +1,9 @@
-Issues
+Issues_Enhancements
 ===============================================================
-~ Optimize Function calls e.g. compiling regex in methods
-~ Non UTF-8 characters cause problems
-~ Count of Total number of passwords is off by one at times
-~ Accurately estimate the number of passwords in the file
-~ Standardize the print report class
-~ Modify few instance methods to @property
-~ Add Doc strings
-~  
+[pypass1] : Optimize Function calls e.g. compiling regex in methods
+[pypass2] : Non UTF-8 characters cause problems
+[pypass3] : Count of Total number of passwords is off by one at times
+[pypass4] : Accurately estimate the number of passwords in the file
+[pypass5] : Standardize the print report class
+[pypass6] : Modify few instance methods to @property
+[pypass7] : Add Doc strings

@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 from checks import en_char_check as ec
 from checks import en_date_check as dc
-from common import helper as hp
+from common import helper as hlp
 from process import output as op
 from common import print_report as prn
 
@@ -127,6 +127,12 @@ def main_pds_process(inp_file, file_num_lines):
     u_passwd = []
     char_counter = 0
     passwd_counter = 0
+    # Avoid compilig regex inside the loop
+    len1_regex=hlp.regex_util.compile_regex('(\d){1}$')
+    len2_regex=hlp.regex_util.compile_regex('(\d){2}$')
+    len3_regex=hlp.regex_util.compile_regex('(\d){3}$')
+    len4_regex=hlp.regex_util.compile_regex('(\d){4}$')
+    #
     with open(inp_file, encoding='utf8', errors='ignore') as pwd_fil:
         for line in tqdm(pwd_fil, total=file_num_lines):
             if len(line.strip()) > 0:
@@ -138,18 +144,18 @@ def main_pds_process(inp_file, file_num_lines):
                 i_cc = ec.CharCheck(inp_passwd)
                 i_dc = dc.DateCheck(inp_passwd)
                 #
-                inp_chrchk_props = [i_cc.passwd, i_cc.pwdlen, i_cc.are_all_lc(),
-                                    i_cc.are_all_uc(), i_cc.are_all_nums(),
-                                    i_cc.is_fc_al(), i_cc.is_fc_num(),
-                                    i_cc.is_lc_al(), i_cc.is_lc_num(),
-                                    i_cc.is_fc_spchr(), i_cc.is_lc_spchr(),
-                                    i_cc.len_le_6(), i_cc.len_le_8(), i_cc.len_gt_8(),
-                                    i_cc.get_lst_dgts(1), i_cc.get_lst_dgts(2),
-                                    i_cc.get_lst_dgts(3), i_cc.get_lst_dgts(4)
+                inp_chrchk_props = [i_cc.passwd, i_cc.pwdlen, i_cc.are_all_lc,
+                                    i_cc.are_all_uc, i_cc.are_all_nums,
+                                    i_cc.is_fc_al, i_cc.is_fc_num,
+                                    i_cc.is_lc_al, i_cc.is_lc_num,
+                                    i_cc.is_fc_spchr, i_cc.is_lc_spchr,
+                                    i_cc.len_le_6, i_cc.len_le_8, i_cc.len_gt_8,
+                                    i_cc.get_lst_dgts(len1_regex), i_cc.get_lst_dgts(len2_regex),
+                                    i_cc.get_lst_dgts(len3_regex), i_cc.get_lst_dgts(len4_regex)
                                     ]
-                inp_datechk_props = [i_dc.get_year(),
-                                     i_dc.get_day_long(), i_dc.get_day_short(),
-                                     i_dc.get_mnth_long(), i_dc.get_mnth_short()
+                inp_datechk_props = [i_dc.get_year,
+                                     i_dc.get_day_long, i_dc.get_day_short,
+                                     i_dc.get_mnth_long, i_dc.get_mnth_short
                                      ]
                 #
                 u_passwd.append(inp_chrchk_props+inp_datechk_props)
