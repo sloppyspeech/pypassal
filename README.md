@@ -4,6 +4,7 @@ Password Analyser in Python,is a python implementation for https://github.com/di
 
 ## Author 
 SloppySpeech (https://github.com/sloppyspeech)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
