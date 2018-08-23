@@ -6,4 +6,5 @@ Issues
 ~ Accurately estimate the number of passwords in the file
 ~ Standardize the print report class
 ~ Modify few instance methods to @property
+~ Add Doc strings
 ~  
