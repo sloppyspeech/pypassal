@@ -5,6 +5,7 @@ import argparse
 import os
 import collections as colls
 from tqdm import tqdm
+import time
 
 from checks import en_char_check as ec
 from checks import en_date_check as dc
@@ -133,54 +134,68 @@ def main_pds_process(inp_file, file_num_lines):
     len3_regex=hlp.regex_util.compile_regex('(\d){3}$')
     len4_regex=hlp.regex_util.compile_regex('(\d){4}$')
     #
-    with open(inp_file, encoding='utf8', errors='ignore') as pwd_fil:
-        for line in tqdm(pwd_fil, total=file_num_lines):
-            if len(line.strip()) > 0:
-                inp_passwd = line.strip()
-                passwd_counter += 1
-                for c in inp_passwd:
-                    ec.CharCheck.char_counter[c] = ec.CharCheck.char_counter[c]+1
-                    char_counter += 1
-                i_cc = ec.CharCheck(inp_passwd)
-                i_dc = dc.DateCheck(inp_passwd)
-                #
-                inp_chrchk_props = [i_cc.passwd, i_cc.pwdlen, i_cc.are_all_lc,
-                                    i_cc.are_all_uc, i_cc.are_all_nums,
-                                    i_cc.is_fc_al, i_cc.is_fc_num,
-                                    i_cc.is_lc_al, i_cc.is_lc_num,
-                                    i_cc.is_fc_spchr, i_cc.is_lc_spchr,
-                                    i_cc.len_le_6, i_cc.len_le_8, i_cc.len_gt_8,
-                                    i_cc.get_lst_dgts(len1_regex), i_cc.get_lst_dgts(len2_regex),
-                                    i_cc.get_lst_dgts(len3_regex), i_cc.get_lst_dgts(len4_regex)
-                                    ]
-                inp_datechk_props = [i_dc.get_year,
-                                     i_dc.get_day_long, i_dc.get_day_short,
-                                     i_dc.get_mnth_long, i_dc.get_mnth_short
-                                     ]
-                #
-                u_passwd.append(inp_chrchk_props+inp_datechk_props)
-                inp_chrchk_props = []
-                inp_datechk_props = []
-    #print(u_passwd)
-    col_list = ['passwd', 'pwdlen', 'all_lc', 'all_uc', 'all_nums', 'fc_al', 'fc_num',
-                'lc_al', 'lc_num', 'fc_spchr', 'lc_spchr',
-                'len_le_6', 'len_le_8', 'len_gt_8',
-                'last_digit', 'last_2_digits', 'last_3_digits', 'last_4_digits',
-                'year', 'day_long', 'day_short', 'mnth_long', 'mnth_short'
-                ]
+    try:
+        with open(inp_file, encoding='utf8', errors='ignore') as pwd_fil:
+            for line in tqdm(pwd_fil, total=file_num_lines):
+                if len(line.strip()) > 0:
+                    inp_passwd = line.strip()
+                    passwd_counter += 1
+                    for c in inp_passwd:
+                        ec.CharCheck.char_counter[c] = ec.CharCheck.char_counter[c]+1
+                        char_counter += 1
+                    i_cc = ec.CharCheck(inp_passwd)
+                    i_dc = dc.DateCheck(inp_passwd)
+                    #
+                    inp_chrchk_props = [i_cc.passwd, i_cc.pwdlen, i_cc.are_all_lc,
+                                        i_cc.are_all_uc, i_cc.are_all_nums,
+                                        i_cc.is_fc_al, i_cc.is_fc_num,
+                                        i_cc.is_lc_al, i_cc.is_lc_num,
+                                        i_cc.is_fc_spchr, i_cc.is_lc_spchr,
+                                        i_cc.len_le_6, i_cc.len_le_8, i_cc.len_gt_8,
+                                        i_cc.get_lst_dgts(len1_regex), i_cc.get_lst_dgts(len2_regex),
+                                        i_cc.get_lst_dgts(len3_regex), i_cc.get_lst_dgts(len4_regex)
+                                        ]
+                    inp_datechk_props = [i_dc.get_year,
+                                        i_dc.get_day_long, i_dc.get_day_short,
+                                        i_dc.get_mnth_long, i_dc.get_mnth_short
+                                        ]
+                    #
+                    u_passwd.append(inp_chrchk_props+inp_datechk_props)
+                    inp_chrchk_props = []
+                    inp_datechk_props = []
+        #print(u_passwd)
+        # col_list = ['passwd', 'pwdlen', 'all_lc', 'all_uc', 'all_nums', 'fc_al', 'fc_num',
+        #             'lc_al', 'lc_num', 'fc_spchr', 'lc_spchr',
+        #             'len_le_6', 'len_le_8', 'len_gt_8',
+        #             'last_digit', 'last_2_digits', 'last_3_digits', 'last_4_digits',
+        #             'year', 'day_long', 'day_short', 'mnth_long', 'mnth_short'
+        #             ]
 
-    show_report(pd.DataFrame(u_passwd, columns=col_list),
-                passwd_counter, char_counter)
-
+        # show_report(pd.DataFrame(u_passwd, columns=col_list),
+        #             passwd_counter, char_counter)
+    except KeyboardInterrupt:
+        print("\033[0;31m"+"******************** Program terminating *****************************"+"\033[0m" )
+        print("******************** Will exit after report is printed *****************************")
+        time.sleep(2)
+    finally:
+        col_list = ['passwd', 'pwdlen', 'all_lc', 'all_uc', 'all_nums', 'fc_al', 'fc_num',
+                    'lc_al', 'lc_num', 'fc_spchr', 'lc_spchr',
+                    'len_le_6', 'len_le_8', 'len_gt_8',
+                    'last_digit', 'last_2_digits', 'last_3_digits', 'last_4_digits',
+                    'year', 'day_long', 'day_short', 'mnth_long', 'mnth_short'
+                    ]
+        show_report(pd.DataFrame(u_passwd, columns=col_list),
+            passwd_counter, char_counter)        
 
 if __name__ == '__main__':
+    print(" Press "+"\033[0;31m"+"CTRL+C "+"\033[0m"+"to cancel anytime ")
     argPrs = argparse.ArgumentParser()
     argPrs.add_argument('inp_file', help=' Input File Name ',)
     args = argPrs.parse_args()
     try:
         file_num_lines = round(os.stat(args.inp_file).st_size/10.5)
     except:
-        print("Input File doesn't Exists or is empty ")
+        print("Input File doesn't Exist or is empty ")
         exit(1)
     #
     print("*"*60)
