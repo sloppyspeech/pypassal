@@ -17,7 +17,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ### Lets Do IT
 *** Tested only on python3.6
 
-Make sure python points to alteast python3.6
+Make sure python points to alteast python3.6 on Linux/MacOS/Unix
 
 Create Virtual Env and install the required packages/modules
 

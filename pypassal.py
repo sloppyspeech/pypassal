@@ -148,7 +148,7 @@ def main_pds_process(inp_file, file_num_lines):
     #
     try:
         with open(inp_file, encoding='utf8', errors='ignore') as pwd_fil:
-            for line in tqdm(pwd_fil, total=file_num_lines):
+            for line in tqdm(pwd_fil, total=file_num_lines,ncols=80):
                 if len(line.strip()) > 0:
                     inp_passwd = line.strip()
                     passwd_counter += 1
@@ -191,6 +191,10 @@ def main_pds_process(inp_file, file_num_lines):
             passwd_counter, char_counter)        
 
 if __name__ == '__main__':
+    os.system('clear')
+    print("="*80)
+    print("                "+"\033[1;36m"+"               Password Analyser"+"\033[0m")
+    print("="*80)
     print(" Press "+"\033[0;31m"+"CTRL+C "+"\033[0m"+"to cancel anytime ")
     argPrs = argparse.ArgumentParser()
     argPrs.add_argument('inp_file', help=' Input File Name ',)
@@ -201,5 +205,5 @@ if __name__ == '__main__':
         print("Input File doesn't Exist or is empty ")
         exit(1)
     #
-    print("*"*60)
+    print("="*80)
     main_pds_process(args.inp_file, file_num_lines)
