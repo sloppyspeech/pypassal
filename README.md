@@ -42,11 +42,12 @@ cd ..
 
 ```
 
-╭─ [ ~/Learn/LearnPy/pypassal ] ‹master*› 
-╰─▶ python3.6 pypassal.py ./data/phpbb.txt
-/usr/lib64/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  return f(*args, **kwds)
-************************************************************
+================================================================================
+                              Password Analyser
+================================================================================
+ Press CTRL+C to cancel anytime 
+================================================================================
+
 184389it [00:18, 10206.61it/s]                                                                                                                                
 
 ============================================================
