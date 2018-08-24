@@ -1,5 +1,3 @@
-|Python|
-
 # pypassal
 Password Analyser in Python,is a python implementation for https://github.com/digininja/pipal . 
 
