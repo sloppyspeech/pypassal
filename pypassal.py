@@ -193,7 +193,7 @@ def main_pds_process(inp_file, file_num_lines):
 if __name__ == '__main__':
     os.system('clear')
     print("="*80)
-    print("                "+"\033[1;36m"+"               Password Analyser"+"\033[0m")
+    print("                              "+"\033[47m"+"\033[1;34m"+"Password Analyser"+"\033[0m")
     print("="*80)
     print(" Press "+"\033[0;31m"+"CTRL+C "+"\033[0m"+"to cancel anytime ")
     argPrs = argparse.ArgumentParser()
