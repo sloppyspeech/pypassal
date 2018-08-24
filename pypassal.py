@@ -14,10 +14,6 @@ from process import output as op
 from common import print_report as prn
 
 
-def show_overall_report():
-    pass
-
-
 def show_report(my_df, passwd_count, char_count):
 
     year_df = my_df[my_df['year'] != 0].groupby(
@@ -83,36 +79,52 @@ def show_report(my_df, passwd_count, char_count):
     print(prn.PrintReport.misc_format('Total Passwords', passwd_count))
     print(prn.PrintReport.misc_format_pct('All Chars Lower Case',
                                           smry.get_all_chars_lc()[0], smry.get_all_chars_lc()[1]))
+    
     print(prn.PrintReport.misc_format_pct('All Chars Upper Case',
                                           smry.get_all_chars_uc()[0], smry.get_all_chars_uc()[1]))
+    
     print(prn.PrintReport.misc_format_pct('All Numbers',
                                           smry.get_all_nums()[0], smry.get_all_nums()[1]))
+    
     print(prn.PrintReport.misc_format_pct('First Char Number',
                                           smry.get_fc_num()[0], smry.get_fc_num()[1]))
+    
     print(prn.PrintReport.misc_format_pct(
         'First Char AlphaNum', smry.get_fc_al()[0], smry.get_fc_al()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Last Char Number',
                                           smry.get_lc_num()[0], smry.get_lc_num()[1]))
+    
     print(prn.PrintReport.misc_format_pct(
         'Last Char AlphaNum', smry.get_lc_al()[0], smry.get_lc_al()[1]))
+    
     print(prn.PrintReport.misc_format_pct('First Char Special Char',
                                           smry.get_fc_spchr()[0], smry.get_fc_spchr()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Last Char Special Char',
                                           smry.get_lc_spchr()[0], smry.get_lc_spchr()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Length Less than eq 6',
                                           smry.get_len_le_6()[0], smry.get_len_le_6()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Length Less than eq 8',
                                           smry.get_len_le_8()[0], smry.get_len_le_8()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Length greater than 8',
                                           smry.get_len_gt_8()[0], smry.get_len_gt_8()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Single Digit at the end',
                                           smry.get_last_digit()[0], smry.get_last_digit()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Two Digits at the end',
                                           smry.get_last_2_digits()[0], smry.get_last_2_digits()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Three Digits at the end',
                                           smry.get_last_3_digits()[0], smry.get_last_3_digits()[1]))
+    
     print(prn.PrintReport.misc_format_pct('Four Digits at the end',
                                           smry.get_last_4_digits()[0], smry.get_last_4_digits()[1]))
+    
     print(prn.PrintReport.report_footer("Over All"))
     #
     my_new_df=pd.Series(ec.CharCheck.char_counter).to_frame()
@@ -163,16 +175,7 @@ def main_pds_process(inp_file, file_num_lines):
                     u_passwd.append(inp_chrchk_props+inp_datechk_props)
                     inp_chrchk_props = []
                     inp_datechk_props = []
-        #print(u_passwd)
-        # col_list = ['passwd', 'pwdlen', 'all_lc', 'all_uc', 'all_nums', 'fc_al', 'fc_num',
-        #             'lc_al', 'lc_num', 'fc_spchr', 'lc_spchr',
-        #             'len_le_6', 'len_le_8', 'len_gt_8',
-        #             'last_digit', 'last_2_digits', 'last_3_digits', 'last_4_digits',
-        #             'year', 'day_long', 'day_short', 'mnth_long', 'mnth_short'
-        #             ]
 
-        # show_report(pd.DataFrame(u_passwd, columns=col_list),
-        #             passwd_counter, char_counter)
     except KeyboardInterrupt:
         print("\033[0;31m"+"******************** Program terminating *****************************"+"\033[0m" )
         print("******************** Will exit after report is printed *****************************")
