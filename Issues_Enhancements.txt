@@ -5,5 +5,5 @@ Issues_Enhancements
 [pypass3] : Count of Total number of passwords is off by one at times
 [pypass4] : Accurately estimate the number of passwords in the file
 [pypass5] : Standardize the print report class
-[pypass6] : Modify few instance methods to @property
+[pypass6] : Modify few instance methods to @property --> DONE
 [pypass7] : Add Doc strings
