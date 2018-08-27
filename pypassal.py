@@ -141,10 +141,10 @@ def main_pds_process(inp_file, file_num_lines):
     char_counter = 0
     passwd_counter = 0
     # Avoid compilig regex inside the loop
-    len1_regex=hlp.regex_util.compile_regex('(\d){1}$')
-    len2_regex=hlp.regex_util.compile_regex('(\d){2}$')
-    len3_regex=hlp.regex_util.compile_regex('(\d){3}$')
-    len4_regex=hlp.regex_util.compile_regex('(\d){4}$')
+    len1_regex=hlp.RegexUtil.compile_regex('(\d){1}$')
+    len2_regex=hlp.RegexUtil.compile_regex('(\d){2}$')
+    len3_regex=hlp.RegexUtil.compile_regex('(\d){3}$')
+    len4_regex=hlp.RegexUtil.compile_regex('(\d){4}$')
     #
     try:
         with open(inp_file, encoding='utf8', errors='ignore') as pwd_fil:

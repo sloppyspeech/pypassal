@@ -2,7 +2,7 @@ import re
 # def gt_bln(p_inp):
 #     return ( True if p_inp != None else False)
 
-class regex_util(object):
+class RegexUtil(object):
     #
     def __init__(self, *args, **kwargs):
             pass
