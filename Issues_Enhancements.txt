@@ -7,4 +7,4 @@ Issues_Enhancements
 [pypass5] : Standardize the print report class
 [pypass6] : Modify few instance methods to @property --> DONE
 [pypass7] : Add Doc strings
-[pypass8] : Add termgraph
+[pypass8] : Add termgraph [ its a command line tool, will check for something else ]
