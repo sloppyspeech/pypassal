@@ -1,6 +1,7 @@
 import pandas
 
 class Summaries(object):
+    """ Print Summary """
     def __init__(self,pwd_df):
             self.pwd_df=pwd_df
             self.pwd_df=pwd_df[pwd_df['year'] != 0].groupby('year')['passwd'].count()
