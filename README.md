@@ -19,7 +19,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Really Really Inspired from https://github.com/digininja/pipal 
 
 ### Lets Do IT
-*** Tested only on python3.6
+*** Tested only on Fedora 28 with python3.6
 
 Make sure python points to alteast python3.6 on Linux/MacOS/Unix
 
