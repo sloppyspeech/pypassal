@@ -1,5 +1,6 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/sloppyspeech/pypassal/blob/master/LICENSE)
-[![built with Python3 on Fedora](https://img.shields.io/badge/built%20with-Python3-red.svg)](https://www.python.org/)
+[![built with Python3.6](https://img.shields.io/badge/built%20with-Python3.6-red.svg)](https://www.python.org/)
+
 
 # pypassal
 Password Analyser in Python,is a python implementation for https://github.com/digininja/pipal . 
