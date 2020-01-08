@@ -31,7 +31,8 @@ git clone https://github.com/sloppyspeech/pypassal.git
 cd pypassal
 python -m venv ev_pypassal
 source ./ev_pypassal/bin/activate
-pip install --upgrade pip
+#Optional Step to upgrade pip
+pip install --upgrade pip 
 pip install -r requirements.txt
 ```
 Create a data directory,download and extract the test file
